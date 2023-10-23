@@ -16,11 +16,12 @@ public class RuleManagerApplication {
 		StringBuilder res=new StringBuilder();
 		for(int i=1;i<=count;i++) {
 			RestTemplate restTemplate = new RestTemplate();
-		    String response= restTemplate.getForObject("http://localhost:8081/", String.class);
+		    String response= restTemplate.getForObject("https://rule-executor-git-new-dandotiya9722-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/", String.class);
 		    res.append("response "+i+": "+response+"\n");
 		}
 		return res.toString();
 	}
+	
 	public static void main(String[] args) {
 		SpringApplication.run(RuleManagerApplication.class, args);
 	}
