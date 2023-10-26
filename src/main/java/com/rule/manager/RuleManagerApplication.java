@@ -41,6 +41,7 @@ public class RuleManagerApplication {
 	    	return res.toString();
 	    });
 	}
+	
 	public static void main(String[] args) {
 		SpringApplication.run(RuleManagerApplication.class, args);
 	}
@@ -48,7 +49,7 @@ public class RuleManagerApplication {
 	private CompletableFuture<String> fetchAsync(){
 		return CompletableFuture.supplyAsync(()->{
 			RestTemplate restTemplate=new RestTemplate();
-			return restTemplate.getForObject("http://localhost:8081/", String.class);
+			return restTemplate.getForObject("https://rule-executor-git-new-dandotiya9722-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/", String.class);
 		});
 	}
 
